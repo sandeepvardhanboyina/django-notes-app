@@ -16,7 +16,7 @@ services:
   django_app:
     image: "sandeepboyina123/notes-app:latest"
     
-    ports:
+    
       
     command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
     env_file:
