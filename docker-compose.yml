@@ -4,7 +4,7 @@ services:
   nginx:
     build: ./nginx
     image: nginx
-    container_name: "nginx_cont"
+    
     ports:
       - "80:80"
     restart: always
@@ -15,7 +15,7 @@ services:
 
   django_app:
     image: "sandeepboyina123/notes-app:latest"
-    container_name: "django_cont"
+    
     ports:
       - "8000:8000"
     command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
@@ -35,7 +35,7 @@ services:
 
   db:
     image: mysql
-    container_name: "db_cont"
+    
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=test_db
